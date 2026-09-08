@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Oucx.Reader</AssemblyName>
+    <RootNamespace>Oucx.Reader</RootNamespace>
+    <Version>1.0.0</Version>
+    <ApplicationIcon>Assets\oucx-reader.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.3537.50" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\oucx-reader-icon.png" />
+    <Resource Include="Assets\oucx-reader.ico" />
+  </ItemGroup>
+</Project>
