@@ -29,6 +29,8 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 
+Each release includes a self-contained `Oucx.Reader.exe` for direct download, its SHA-256 checksum, and a ZIP package used by automatic updates.
+
 Packaged builds check the latest public GitHub Release at startup. When a newer stable version is available, the app offers to download it, verifies the release package's SHA-256 checksum, installs it after shutdown, and restarts automatically.
 
 The [WebView2 Runtime](https://developer.microsoft.com/microsoft-edge/webview2/) is included with current Windows 10 and Windows 11 installations. If the app reports that its PDF engine cannot start, install the Evergreen WebView2 Runtime from Microsoft.
