@@ -46,6 +46,18 @@ jobs:
           -p:Version=${{ steps.version.outputs.version }}
           -p:PublishSingleFile=true
           -p:IncludeNativeLibrariesForSelfExtract=true
+          -p:EnableCompressionInSingleFile=true
+          -p:DebugType=None
+          -p:DebugSymbols=false
+
+      - name: Verify single-executable output
+        shell: pwsh
+        run: |
+          Remove-Item publish\*.xml, publish\*.pdb -Force -ErrorAction SilentlyContinue
+          $files = @(Get-ChildItem publish -File)
+          if ($files.Count -ne 1 -or $files[0].Name -ne "Oucx.Reader.exe") {
+            throw "Expected only Oucx.Reader.exe in the publish directory; found: $($files.Name -join ', ')"
+          }
 
       - name: Package and checksum
         shell: pwsh
